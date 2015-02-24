@@ -1,0 +1,313 @@
+*{margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 62%;
+    line-height: 100%;
+    font-family: Arial,Helvetica,sans-serif;
+}
+div.clearfix{
+    clear:both;
+    width:100%;
+}
+
+header#header{
+    text-align: left;
+    margin: 0 auto;
+    background: #9B0014;
+}
+
+
+#header ul.menu.users {
+    background: #B70039;
+}
+
+#header ul.menu {
+   // height: 4.5em;
+   // line-height: 4.5em;
+    float: right;
+    padding-top: 0;
+}
+
+#mainmenu {
+    width: 100%;
+   // height:26px;
+    background: #fff;
+    padding: 11px 0;
+}
+
+body>div {
+    line-height: 150%;
+}
+
+div#logo{
+    min-height: 100px;
+    margin-left:4%;
+    padding:8px;
+    width:auto;
+    background-image: url('/img/logo.png') ;
+    
+}
+div#logo img{
+    display:inline-block;
+    vertical-align: middle;
+}
+
+#header h1{
+    margin-top:35px;
+    padding-left:10%;
+    font-size:25px;
+    line-height: 28px;
+    display:inline-block;
+    color:#fff !important;
+    display: inline-block;
+    font-family: Cuprum,Arial,Sans-serif;
+}
+.visuallyhidden{
+    display:none;
+}
+li{
+    list-style: none;
+}
+ul .menu .users{
+    float:right;
+    margin-top:0;
+}
+
+ul .menu .users{
+    display: inline-block;
+    margin-top:0;
+}
+
+nav.lista_collegamenti li{
+    font-family: 'Cuprum',Arial,Sans-serif;
+    font-size: 1.5em;
+    line-height: 2em;
+    text-decoration: none;
+    background: #B70039 !important;
+    padding:10px;
+    float:right;
+}
+
+nav.lista_collegamenti a{
+    color: #fff !important;
+}
+li.menu_ateneo a:hover{
+    color:#000 !important;
+    background-color: #fff;
+}
+#mainmenu{
+    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px #DCDCDC solid;
+}
+
+nav#mainmenu ul.clearfix{
+    
+    background-color: #fff;
+    margin-left:4%;
+    display: block;
+    padding:5px auto;
+}
+
+#mainmenu ul a {
+    font-family: 'Cuprum',Arial,Sans-serif;
+    font-size: 1.5em;
+    line-height: 2em;
+    text-decoration: none;
+}
+
+li.fl{
+    //width:10%;
+    text-align: center;
+    text-decoration: underline;
+    display: inline-block;
+    
+}
+
+li.fl a{
+    text-transform: uppercase;
+    color: #000;
+    padding: 10px ;
+}
+
+li.fl :hover {
+background: #9B0014;
+color: #fff !important;     
+}
+
+
+section#tblWrapper{
+    margin:20px auto;
+    max-width:95%;
+    overflow: scroll;
+}
+table#tblPrenotazioni {
+    background: #DCDCDC;
+    margin: 0 auto 0 auto;
+    display: table;
+    border-collapse: separate;
+    border-collapse: collapse;
+   
+}
+table#tblPrenotazioni th{
+    border: 1px solid #666;    
+    border-left: 2px solid #666;
+    border-right: 2px solid #666;
+    background-color: #30343B;
+    color: white;
+    font-weight: bolder;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    //white-space: nowrap;
+    min-width: 100px;
+}
+
+table#tblPrenotazioni td{
+    text-transform: uppercase;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    height: 6em;
+    text-align: center;
+    border: 1px solid #666;
+    border-left: 2px solid #666;
+    border-right: 2px solid #666;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+table#tblPrenotazioni td.corso  {
+    background: #494958 !important;
+    border-bottom: none;
+    color: #fff;
+}
+table#tblPrenotazioni td.apici  {
+    background: #494958 !important;
+    border-bottom: none;
+    border-top:none;
+    color: #fff;
+}
+
+table#tblPrenotazioni tr:nth-child(odd) {
+    background: #C0C0C0;
+}
+
+
+td.indice_ora{
+    font-size: 2em;
+    height: 3em !important;
+}
+
+li.fl p.selected{
+    
+    padding: 0 10px;
+    font-family: 'Cuprum',Arial,Sans-serif;
+    font-size: 1.5em;
+    line-height: 2em;
+    text-decoration: none !important;
+    background-color: #30343B;
+    color:#fff;
+    
+}
+
+.btn {
+  background: #c90446;
+  background-image: -webkit-linear-gradient(top, #c90446, #9b0015);
+  background-image: -moz-linear-gradient(top, #c90446, #9b0015);
+  background-image: -ms-linear-gradient(top, #c90446, #9b0015);
+  background-image: -o-linear-gradient(top, #c90446, #9b0015);
+  background-image: linear-gradient(to bottom, #c90446, #9b0015);
+  color: #ffffff;
+  padding: 4px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #9b0015;
+  background-image: -webkit-linear-gradient(top, #9b0015, #8f0311);
+  background-image: -moz-linear-gradient(top, #9b0015, #8f0311);
+  background-image: -ms-linear-gradient(top, #9b0015, #8f0311);
+  background-image: -o-linear-gradient(top, #9b0015, #8f0311);
+  background-image: linear-gradient(to bottom, #9b0015, #8f0311);
+  text-decoration: none;
+}
+
+section#time_controller{
+    margin-left: 2.5%;
+}
+
+section#time_controller h2{ 
+    font-family: 'Cuprum',Arial,Sans-serif;
+    font-size: 1.8em;
+    line-height: 2.2em;
+    text-decoration: none;
+}
+
+.descrizione{
+     font-family: 'Cuprum',Arial,Sans-serif;
+    width: 94%;
+    margin:10px auto;
+    font-size:1.8em;
+    line-height: 1.8em;
+}
+@media (max-width: 950px) {
+    nav .lista_collegamenti, ul.menu.users{
+        width:100% !important;
+        background: #B70039 !important;
+        //display: block;
+        float:right;    
+    }
+    ul.clearfix{
+        margin-top: 48px;
+    }
+    #header h1{
+        text-align: center;
+        font-size: 1.5em;
+    }
+    
+    
+}
+
+@media (max-width: 350px) {
+     nav .lista_collegamenti, ul.menu.users{
+         display:none;
+     }  
+     ul.clearfix{
+        margin-top: 10px;
+    }
+    li.fl a{
+        line-height: 2.8em !important;
+    }
+}
+
+footer{
+    width: 100%;
+    min-height: 60px;
+    background: #9B0014;
+    float:left;
+    clear: both;
+}
+
+footer p.autori{
+    font-family: 'Cuprum',Arial,Sans-serif;
+    font-size: 1.4em;
+    line-height: 2em;
+    text-decoration: none;
+    color:#fff;
+    text-align: right;
+    margin-right: 4%;
+    padding-bottom: 10px;
+}
+
+footer p.disclaimer{
+    font-family: 'Cuprum',Arial,Sans-serif;
+    font-size: 1.4em;
+    width: 100%;
+    color:#fff;
+    margin-left: 3%;
+    padding:2%;
+    
+}
+
+.xdebug-error, .xe-notice{
+    display: none;
+}
