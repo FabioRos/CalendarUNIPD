@@ -249,6 +249,8 @@ section#time_controller h2{
     font-size:1.8em;
     line-height: 1.8em;
 }
+
+
 @media (max-width: 950px) {
     nav .lista_collegamenti, ul.menu.users{
         width:100% !important;
@@ -310,11 +312,11 @@ footer p.disclaimer{
 }
 
 ul.txt_prenotazioni_container li {
-	font-size:1.3em;
+	font-size:1.2em;
 	line-height: 1.2em;
 	margin-left:5%;
 	font-weight:bold;
-	list-style: disc !important;
+	list-style: none !important;
 }
 
 ul.txt_prenotazioni li {
@@ -329,17 +331,28 @@ ul.txt_prenotazioni li ul{
 
 ul.txt_prenotazioni li ul li{
 	font-weight:normal;
-    list-style:none !important;
+    list-style:none;
 	margin-left:2%;
 	}
 	
+
+	
+span.nome_aula{
+	font-weight:bold;
+	line-height:2.2em;
+	font-size:2em !important;
+}
+
 @media print {
+
 	table{
 		display:none !important;
 	}
 	
 	header{
-		background: #9B0014;
+		-webkit-print-color-adjust:exact;
+		content: url("img/intestazione_print.png");
+		attr(alt):'Stato prenotazione aule informatica, unipd';
 	}
 	
 	#formDatePicker{
@@ -347,8 +360,33 @@ ul.txt_prenotazioni li ul li{
 	}
 	
 	ul.txt_prenotazioni li {
+		
+		background: white; 
+		font-size: 18pt; 
+		/*
 		font-size:1em;
 		line-height:1.2em;
+		*/
+	}
+	
+	nav#mainmenu, section.descrizione, section#tblWrapper, #titolo_sito, #logo,.menu.users{
+		display:none;
+	}
+	
+	section#listWrapper{	width: auto; 
+		border: 0; 
+		margin: 0 5%; 
+		padding: 0; 
+		float: none !important; 	
+	}
+	
+	ul.txt_prenotazioni_container{
+		width:98%;
+	}
+
+	#formDatePicker h2{
+	
+		font-size: 23pt; 
 	}
 
 	

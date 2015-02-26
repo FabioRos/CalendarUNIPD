@@ -360,15 +360,15 @@ class UnipdCalendar {
        $arrayPerLista=  $this->createListedArray($prenotazioni);
        echo "<ul class='txt_prenotazioni_container'>";
        foreach ($arrayPerLista as $aula => $val) {
-            echo "<li>".$aula;
+            echo "<li><span class='nome_aula'>".$aula."</span>";
             if (isset($val)) {
                 ?><ul class="txt_prenotazioni"><?php
                 foreach ($val as $prenotazione) {
                     echo "<li><ul>";
-                    echo "<li> ora d'inizio: {$prenotazione[2]}</li>";
-                    echo "<li> ora di fine: {$prenotazione[3]}</li>";
-                    echo "<li> Materia: {$prenotazione[4]}</li>";
-                    echo "<li> Docente: {$prenotazione[5]} {$prenotazione[6]}</li>";
+                    echo "<li> <strong> ora d'inizio: </strong>{$prenotazione[2]}</li>";
+                    echo "<li> <strong> ora di fine: </strong>{$prenotazione[3]}</li>";
+                    echo "<li> <strong> Materia: </strong>{$prenotazione[4]}</li>";
+                    echo "<li> <strong> Docente: </strong>{$prenotazione[5]} {$prenotazione[6]}</li>";
                     echo "</ul></li>";
                     
                     //var_dump($prenotazione) ;

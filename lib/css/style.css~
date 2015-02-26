@@ -300,14 +300,56 @@ footer p.autori{
 
 footer p.disclaimer{
     font-family: 'Cuprum',Arial,Sans-serif;
-    font-size: 1.4em;
-    width: 100%;
+    font-size: 1.1em;
+	line-height: 1.2em;
+    width:93%;
     color:#fff;
     margin-left: 3%;
     padding:2%;
     
 }
 
-.xdebug-error, .xe-notice{
-    display: none;
+ul.txt_prenotazioni_container li {
+	font-size:1.3em;
+	line-height: 1.2em;
+	margin-left:5%;
+	font-weight:bold;
+	list-style: disc !important;
+}
+
+ul.txt_prenotazioni li {
+	font-weight:normal;
+	margin-left:3%;
+    list-style-type:square;
+}
+
+ul.txt_prenotazioni li ul{
+	margin-bottom:1em;
+}
+
+ul.txt_prenotazioni li ul li{
+	font-weight:normal;
+    list-style:none !important;
+	margin-left:2%;
+	}
+	
+@media print {
+	table{
+		display:none !important;
+	}
+	
+	header{
+		background: #9B0014;
+	}
+	
+	#formDatePicker{
+		display:none;
+	}
+	
+	ul.txt_prenotazioni li {
+		font-size:1em;
+		line-height:1.2em;
+	}
+
+	
 }
