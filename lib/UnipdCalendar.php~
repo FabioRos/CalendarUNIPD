@@ -187,34 +187,35 @@ class UnipdCalendar {
      *
      */
     private function convertiOra($ora) {
-        $lower_bound = 7;  //ora inizio
+        $lower_bound = 8;  //ora inizio
         $upper_bound = 19; //ora fine
+        $slice=0;
 
         if (isset($ora)) {
-
-            $pieces = explode(":", $ora);
-            /* sono 24 time slices da mezzora compresi tra le 7.00 e le 19 
-              0 :=	07:00->07:30
-              23:=	18:30->19:00
+			$pieces = explode(":", $ora);
+            /* sono 22 time slices da mezzora compresi tra le 8.00 e le 19 
+              0 :=	08:00->08:30
+              21:=	18:30->19:00
              */
-            $slice = 2 * ($pieces[0] - $lower_bound);
-            if (isset($pieces[1])) {
-                if ($pieces[1] == 30) {
-                    $slice++;
-                }
-            }
-        } else {
-            $slice = 25;    //se non è indicata un'ora di fine aggiungo un'ora a quella d'inizio.
+            if ($pieces[0]!=7) {
+            	$slice = 2 * ($pieces[0] - $lower_bound);
+              	if (isset($pieces[1])) {
+                	if ($pieces[1] == 30) { $slice++;}
+        		}
+       			else {
+            		$slice = 25;    //se non è indicata un'ora di fine aggiungo un'ora a quella d'inizio.
+        		}
+        	}
+        	return $slice;
         }
-        return $slice;
-    }
+     }
 
     /**
      * Funzione che converte un indice di un array in un'ora.
      *
      */
     private function convertiInOra($indice) {
-        $lower_bound = 7;  //ora inizio
+        $lower_bound = 8;  //ora inizio
         $upper_bound = 19; //ora fine
         
           if($indice%2){
@@ -293,7 +294,7 @@ class UnipdCalendar {
         echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
-        for ($i = 0; $i <= 24; $i++) {
+        for ($i = 0; $i <= 22; $i++) {
             echo "<tr> <td class='indice_ora'> ".$this->convertiInOra($i)." </td>";
             if (isset($prenotazioni[$i])) {
                 foreach (self::$array_aule as $aula) {
@@ -436,7 +437,7 @@ class UnipdCalendar {
 
                     <ul class="clearfix">
                         <li class="fl" id="menuHomePage">
-                            <a class="fl" tabindex="2" href="#">Home</a>
+                            <a class="fl" tabindex="2" href="">Home</a>
                         </li>
                         <li class="fl" id="menuTutte" >
                             <a class="fl" id="tutte_ref" tabindex="3" href="">Tutte le aule</a>
