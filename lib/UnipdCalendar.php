@@ -403,13 +403,15 @@ class UnipdCalendar {
 	<script src='lib/JS/script.js'></script>
 	<!-- <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'> -->
 
-     </head><?php
+     </head> <?php
     }
 
 
     
     public function render() {
-       ?><div id="skip-link"><p><a class="visuallyhidden" tabindex="2" href="#maincontent">Vai al contenuto</a></p></div>
+       ?>
+ 
+                <div id="skip-link"><p><a class="visuallyhidden" tabindex="2" href="#maincontent">Vai al contenuto</a></p></div>
                 <!-- <div id="page-wrapper"><div id="page">-->
                     <header id="header">
                     <div class="clearfix">
@@ -465,7 +467,7 @@ class UnipdCalendar {
 		<section class="descrizione">
 			<p>
 				Questo sito è nato dall'esigenza di poter visualizzare in un'unica pagina lo stato di prenotazione 
-				delle aule che possono interessare agli studenti di Informatica e Matematica.
+				delle aule che possono interessare gli studenti di Informatica e Matematica.
 				Per comodità, è rimasta la possibilità di scegliere di visualizzare solo alcuni gruppi di aule. 
 				La suddivisione è stata fatta in base al luogo di appartenenza (Paolotti, Via Luzzatti, Torre di Archimede). 
 				E' stata data particolare importanza ai laboratori informatici, anch'essi visualizzabili separatamente.
