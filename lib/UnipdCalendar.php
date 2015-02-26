@@ -146,12 +146,9 @@ class UnipdCalendar {
                                 $script = $celle[$i]->find('script');
                                 if ($script == null) { // se l'aula è prenotata (se la cella è vuota, dentro a td c'è una table con uno script)
                                     $link = $celle[$i]->find('a');
-                                    if ($link == null) { // continuazione della prenotazione
+                                    if (!isset($link) || $link == null || $ora=="19:00") { // continuazione della prenotazione
                                         $prenotazione[$indice - 1][3] = $ora; // aggiorno ora fine e non incremento $indice
                                     } else { // nuova prenotazione
-                                        if ($indice > 0) { // non è la prima prenotazione -> aggiorno ora fine prenotazione prec
-                                            $prenotazione[$indice - 1][3] = $ora;
-                                        }
                                         $prenotazione[$indice][0] = $aule[$i - 1]; // AULA
                                         $prenotazione[$indice][1] = $date;    // DATA
                                         $prenotazione[$indice][2] = $ora;     // ORA INIZIO
@@ -159,6 +156,10 @@ class UnipdCalendar {
                                         $prenotazione[$indice][4] = $link[0]->text(); // CORSO
                                         $prenotazione[$indice][5] = substr($link[0]->title, 14); // COGNOME PROF
                                         $prenotazione[$indice][6] = 0;    // NOME PROF
+                                        // non è la prima prenotazione dell'aula -> aggiorno ora fine prenotazione prec
+                                        if ($indice > 0 && $prenotazione[$indice - 1][0]==$prenotazione[$indice][0] ) { 
+                                           $prenotazione[$indice - 1][3] = $ora;
+                                         }
                                         $indice++;
                                     }
                                 }
