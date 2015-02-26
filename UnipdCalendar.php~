@@ -146,9 +146,12 @@ class UnipdCalendar {
                                 $script = $celle[$i]->find('script');
                                 if ($script == null) { // se l'aula è prenotata (se la cella è vuota, dentro a td c'è una table con uno script)
                                     $link = $celle[$i]->find('a');
-                                    if (!isset($link) || $link == null || $ora=="19:00") { // continuazione della prenotazione
+                                    if ($link == null) { // continuazione della prenotazione
                                         $prenotazione[$indice - 1][3] = $ora; // aggiorno ora fine e non incremento $indice
                                     } else { // nuova prenotazione
+                                        if ($indice > 0) { // non è la prima prenotazione -> aggiorno ora fine prenotazione prec
+                                            $prenotazione[$indice - 1][3] = $ora;
+                                        }
                                         $prenotazione[$indice][0] = $aule[$i - 1]; // AULA
                                         $prenotazione[$indice][1] = $date;    // DATA
                                         $prenotazione[$indice][2] = $ora;     // ORA INIZIO
@@ -156,10 +159,6 @@ class UnipdCalendar {
                                         $prenotazione[$indice][4] = $link[0]->text(); // CORSO
                                         $prenotazione[$indice][5] = substr($link[0]->title, 14); // COGNOME PROF
                                         $prenotazione[$indice][6] = 0;    // NOME PROF
-                                        // non è la prima prenotazione dell'aula -> aggiorno ora fine prenotazione prec
-                                        if ($indice > 0 && $prenotazione[$indice - 1][0]==$prenotazione[$indice][0] ) { 
-                                           $prenotazione[$indice - 1][3] = $ora;
-                                         }
                                         $indice++;
                                     }
                                 }
@@ -361,15 +360,15 @@ class UnipdCalendar {
        $arrayPerLista=  $this->createListedArray($prenotazioni);
        echo "<ul class='txt_prenotazioni_container'>";
        foreach ($arrayPerLista as $aula => $val) {
-            echo "<li><span class='nome_aula'>".$aula."</span>";
+            echo "<li>".$aula;
             if (isset($val)) {
                 ?><ul class="txt_prenotazioni"><?php
                 foreach ($val as $prenotazione) {
                     echo "<li><ul>";
-                    echo "<li> <strong> ora d'inizio: </strong>{$prenotazione[2]}</li>";
-                    echo "<li> <strong> ora di fine: </strong>{$prenotazione[3]}</li>";
-                    echo "<li> <strong> Materia: </strong>{$prenotazione[4]}</li>";
-                    echo "<li> <strong> Docente: </strong>{$prenotazione[5]} {$prenotazione[6]}</li>";
+                    echo "<li> ora d'inizio: {$prenotazione[2]}</li>";
+                    echo "<li> ora di fine: {$prenotazione[3]}</li>";
+                    echo "<li> Materia: {$prenotazione[4]}</li>";
+                    echo "<li> Docente: {$prenotazione[5]} {$prenotazione[6]}</li>";
                     echo "</ul></li>";
                     
                     //var_dump($prenotazione) ;
@@ -403,13 +402,15 @@ class UnipdCalendar {
 	<script src='lib/JS/script.js'></script>
 	<!-- <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'> -->
 
-     </head><?php
+     </head> <?php
     }
 
 
     
     public function render() {
-       ?><div id="skip-link"><p><a class="visuallyhidden" tabindex="2" href="#maincontent">Vai al contenuto</a></p></div>
+       ?>
+ 
+                <div id="skip-link"><p><a class="visuallyhidden" tabindex="2" href="#maincontent">Vai al contenuto</a></p></div>
                 <!-- <div id="page-wrapper"><div id="page">-->
                     <header id="header">
                     <div class="clearfix">
@@ -465,7 +466,7 @@ class UnipdCalendar {
 		<section class="descrizione">
 			<p>
 				Questo sito è nato dall'esigenza di poter visualizzare in un'unica pagina lo stato di prenotazione 
-				delle aule che possono interessare agli studenti di Informatica e Matematica.
+				delle aule che possono interessare gli studenti di Informatica e Matematica.
 				Per comodità, è rimasta la possibilità di scegliere di visualizzare solo alcuni gruppi di aule. 
 				La suddivisione è stata fatta in base al luogo di appartenenza (Paolotti, Via Luzzatti, Torre di Archimede). 
 				E' stata data particolare importanza ai laboratori informatici, anch'essi visualizzabili separatamente.
