@@ -1,0 +1,28 @@
+{
+  "name": "css-toggle-switch",
+  "version": "2.1.6",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghinda/css-toggle-switch.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-watch": "~0.6",
+    "grunt-concurrent": "~1.0",
+    "grunt-contrib-connect": "~0.9",
+    "connect-livereload": "~0.5",
+    "matchdep": "~0.3",
+    "grunt-sass": "~0",
+    "grunt-saucelabs": "~8"
+  },
+  "peerDependencies": {
+    "grunt-cli": "~0.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
