@@ -496,7 +496,7 @@ class UnipdCalendar {
                 	  <input id="lista" name="view" type="radio" >
                 	  <label for="lista" onclick="">LISTA</label>
                 	  <input id="tabella" name="view" type="radio" checked>
-                	  <label for="month" onclick="">Month</label>
+                	  <label for="tabella" onclick="">TABELLA</label>
                 	  <a></a>
                 </section>
                 
