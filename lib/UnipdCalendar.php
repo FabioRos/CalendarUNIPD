@@ -494,9 +494,9 @@ class UnipdCalendar {
                 
                 <section class="switch-toggle switch-candy">
                 	  <input id="lista" name="view" type="radio" >
-                	  <label for="lista" onclick="">LISTA</label>
+                	  <label for="lista">LISTA</label>
                 	  <input id="tabella" name="view" type="radio" checked>
-                	  <label for="tabella" onclick="">TABELLA</label>
+                	  <label for="tabella">TABELLA</label>
                 	  <a></a>
                 </section>
                 
