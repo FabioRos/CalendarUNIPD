@@ -169,7 +169,7 @@ class UnipdCalendar {
                     $prenotazione[$indice][0] = "P6"; // AULA
                     $prenotazione[$indice][1] = $date;    // DATA
                     $prenotazione[$indice][2] = "07:00";     // ORA INIZIO
-                    $prenotazione[$indice - 1][3] = "19:00"; // ORA FINE 
+                    $prenotazione[$indice][3] = "19:00"; // ORA FINE 
                     $prenotazione[$indice][4] = "Servizio Organizzazione/Formazione"; // CORSO
                     $prenotazione[$indice][5] = "Aula gestita dalla Segreteria Delegato Spazi Didattici"; // COGNOME PROF
                     $prenotazione[$indice][6] = 0; // NOME PROF
