@@ -233,6 +233,7 @@ li.fl p.selected{
 
 section#time_controller{
     margin-left: 2.5%;
+    display:inline-block;
 }
 
 section#time_controller h2{ 
@@ -250,6 +251,19 @@ section#time_controller h2{
     line-height: 1.8em;
 }
 
+
+section#toogleWrapper{
+	float: right;
+	margin-right:3%;
+	width:	150px;
+}
+/*colore sfondo toggle selezionato*/
+.switch-candy a{
+	background-color:#9b0015 !important;
+}
+.switch-candy input:checked + label{
+	color:#FFF !important;
+}
 
 @media (max-width: 950px) {
     nav .lista_collegamenti, ul.menu.users{
@@ -269,6 +283,20 @@ section#time_controller h2{
     
 }
 
+
+
+@media (max-width: 600px){
+	    
+	section#toogleWrapper{
+		clear:left;
+		float:left;
+		margin-left:3%;
+		width:	80%;
+	}
+}
+
+
+
 @media (max-width: 350px) {
      nav .lista_collegamenti, ul.menu.users{
          display:none;
@@ -279,6 +307,7 @@ section#time_controller h2{
     li.fl a{
         line-height: 2.8em !important;
     }
+    
 }
 
 footer{

@@ -403,6 +403,9 @@ class UnipdCalendar {
 	<script src='lib/JS/script.js'></script>
 	<!-- <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'> -->
 
+	
+        <link rel='stylesheet' href='lib/toggle/dist/toggle-switch.css' >
+
      </head><?php
     }
 
