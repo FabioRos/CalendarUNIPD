@@ -254,15 +254,18 @@ section#time_controller h2{
 
 section#toogleWrapper{
 	float: right;
+	margin-top:10px;
 	margin-right:3%;
-	width:	150px;
+	min-width:	150px !important;
+	width:	20%;
 }
 /*colore sfondo toggle selezionato*/
 .switch-candy a{
-	background-color:#9b0015 !important;
+	background-image: linear-gradient(to bottom, #c90446, #9b0015) !important;
 }
 .switch-candy input:checked + label{
 	color:#FFF !important;
+	padding:4px;
 }
 
 @media (max-width: 950px) {
@@ -291,7 +294,13 @@ section#toogleWrapper{
 		clear:left;
 		float:left;
 		margin-left:3%;
-		width:	80%;
+		width:	92%;
+	}
+	
+	section#tblWrapper{
+		float:left;
+		margin-left:3%;
+		clear:both;
 	}
 }
 
