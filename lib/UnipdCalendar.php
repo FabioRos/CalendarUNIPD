@@ -385,18 +385,18 @@ class UnipdCalendar {
         //var_dump($arrayPerLista);
     }
 
-	public function printListedContentsFreeRooms() {
+	public function printFreeRoomsListedContents() {
 		
 		$indice_ora_corrente=0;
 		$indice_ultimo_elemento=count($this->arrayAuleLibere)-1;
 		echo "<ul class='txt_aule_libere_container'>";
-		foreach($this->arrayAuleLibere as $auleLibereInQuestOra){
+		foreach($this->arrayAuleLibere as $auleLibereInQuestOra) {
 			
-			if($indice_ora_corrente != $indice_ultimo_elemento){
+			if($indice_ora_corrente != $indice_ultimo_elemento) {
 				echo "<li><span class='range_orari'>Dalle ".$this->convertiInOra($indice_ora_corrente);
 				echo " alle ".$this->convertiInOra($indice_ora_corrente+1)." </span>";
 				echo "<ul class='lista_interna_aule_libere'>";
-				foreach($auleLibereInQuestOra as $k =>$v){
+				foreach($auleLibereInQuestOra as $k =>$v) {
 					echo "<li class='entry_aula_libera'>$k</li>";
 				}
 				echo "</ul></li>";
@@ -404,10 +404,7 @@ class UnipdCalendar {
 			$indice_ora_corrente = $indice_ora_corrente+1;
 		}
 		echo "<ul>";		
-		//var_dump($this->arrayAuleLibere);
-		
-		
-		
+		//var_dump($this->arrayAuleLibere);	
 	}
 
 
@@ -545,7 +542,7 @@ class UnipdCalendar {
                 </section>
                 <section id='listWrapperEmptyRooms'>
                     <?php
-                        $this->printListedContentsFreeRooms(); 
+                        $this->printFreeRoomsListedContents(); 
                     ?>
                 </section>
         <?php
