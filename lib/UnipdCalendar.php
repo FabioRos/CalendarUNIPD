@@ -483,6 +483,9 @@ class UnipdCalendar {
                         <li id="menuWifi" class="fl">
                             <a class="fl" id="torre_ref" tabindex="7" href="">Torre Archimede</a>
                         </li>
+                         <li id="menuWifi" class="fl">
+                            <a class="fl" id="libere_ref" tabindex="7" href="">AULE LIBERE</a>
+                        </li>
 
                     </ul>
                     <!-- <h1 class="title"></h1>-->
@@ -497,7 +500,7 @@ class UnipdCalendar {
 				delle aule che possono interessare agli studenti di Informatica e Matematica.
 				Per comodità, è rimasta la possibilità di scegliere di visualizzare solo alcuni gruppi di aule. 
 				La suddivisione è stata fatta in base al luogo di appartenenza (Paolotti, Via Luzzatti, Torre di Archimede). 
-				E' stata data particolare importanza ai laboratori informatici, anch'essi visualizzabili separatamente.
+				È stata data particolare importanza ai laboratori informatici, anch'essi visualizzabili separatamente.
                                 
 			</p>
 
@@ -550,7 +553,7 @@ class UnipdCalendar {
 
     public function printFooter(){
     ?><footer>
-    	<p class="disclaimer"> I dati sono prelevati, al momento del caricamento della pagina,
+    	<p class="disclaimer"> I dati sono prelevati al momento del caricamento della pagina
         in modo automatico dai siti di prenotazione dell'ateneo; potrebbero, quindi, essere affetti da errore.</p>
         <p class="autori" >
         	A cura di: <span itemprop="author" itemscope itemtype="http://schema.org/Person">
