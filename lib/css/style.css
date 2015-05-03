@@ -363,6 +363,14 @@ ul.txt_prenotazioni_container li {
 	list-style: none !important;
 }
 
+ul.txt_aule_libere_container li {
+	font-size:1.2em;
+	line-height: 1.2em;
+	margin-left:5%;
+	font-weight:normal;
+	list-style: none !important;
+}
+
 ul.txt_prenotazioni li {
 	font-weight:normal;
 	margin-left:3%;
@@ -379,13 +387,18 @@ ul.txt_prenotazioni li ul li{
 	margin-left:2%;
 	}
 	
-
-	
-span.nome_aula{
+span.range_orari{
+	line-height:2em;
+	font-size:1.8em;
 	font-weight:bold;
-	line-height:2.2em;
-	font-size:2em !important;
 }
+
+span.nome_aula{
+		font-weight:bold;
+		line-height:2.2em;
+		font-size:2em !important;
+	}
+	
 
 @media print {
 
@@ -417,7 +430,8 @@ span.nome_aula{
 		display:none;
 	}
 	
-	section#listWrapper{	width: auto; 
+	section#listWrapper, section#listWrapperEmptyRooms{	
+		width: auto; 
 		border: 0; 
 		margin: 0 5%; 
 		padding: 0; 
@@ -428,6 +442,10 @@ span.nome_aula{
 		width:98%;
 	}
 
+	ul.txt_aule_libere_container{
+		width:98%;
+	}
+	
 	#formDatePicker h2{
 	
 		font-size: 23pt; 

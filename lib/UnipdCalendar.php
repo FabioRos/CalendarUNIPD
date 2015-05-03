@@ -385,6 +385,28 @@ class UnipdCalendar {
         //var_dump($arrayPerLista);
     }
 
+	public function printListedContentsFreeRooms() {
+		
+		$indice_ora_corrente=0;
+		echo "<ul class='txt_aule_libere_container'>";
+		foreach($this->arrayAuleLibere as $auleLibereInQuestOra){
+			echo "<li><span class='range_orari'>Dalle ".$this->convertiInOra($indice_ora_corrente);
+			echo " alle ".$this->convertiInOra($indice_ora_corrente+1)." </span>";
+			echo "<ul class='lista_interna_aule_libere'>";
+			foreach($auleLibereInQuestOra as $k =>$v){
+				echo "<li class='entry_aula_libera'>$k</li>";
+			}
+			echo "</ul></li>";
+			$indice_ora_corrente = $indice_ora_corrente+1;
+		}
+		echo "<ul>";		
+		//var_dump($this->arrayAuleLibere);
+		
+		
+		
+	}
+
+
     public function printHead(){
         ?><head>
 	<meta charset='UTF-8'>
@@ -512,6 +534,11 @@ class UnipdCalendar {
                 <section id='listWrapper'>
                     <?php
                         $this->printListedContents($arrayPrenotazioni);
+                    ?>
+                </section>
+                <section id='listWrapperEmptyRooms'>
+                    <?php
+                        $this->printListedContentsFreeRooms(); 
                     ?>
                 </section>
         <?php
