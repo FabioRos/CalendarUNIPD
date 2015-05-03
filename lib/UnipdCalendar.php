@@ -36,6 +36,7 @@ class UnipdCalendar {
         32 => "SRVI"
     );
     
+    private $arrayAuleLibere=array();
 
     function __construct() {
            $this->includes();
@@ -306,26 +307,30 @@ class UnipdCalendar {
                             echo "<td class='corso'> <span>" . $prenotazioni[$i][$aula][4] . "</span> </td>";
                     } else {
                         echo "<td> </td>";
+                        $this->arrayAuleLibere[$i][$aula]="libera";
                     }
                 }
             } else {
                 for ($j = 0; $j < $numAule; $j++)
                     echo "<td> </td>";
+                $this->arrayAuleLibere[$i]="tutto libero";
+                echo $i;
             }
             echo "</tr>";
         }        
         echo "</tbody>";
         echo "</table>";
+        var_dump($this->arrayAuleLibere);
     }
     
     /**
-     * Funzione che crea l'array delle prenotazioni nel formato corretto per ttrasformarlo in lista,
+     * Funzione che crea l'array delle prenotazioni nel formato corretto per trasformarlo in lista,
      * a partire dall'array delle prenotazioni.
      *
      */
     private function createListedArray($prenotazioni)
     {
-       $arrayPerLista = array();                       //creo gli array per ogni aula;
+       $arrayPerLista = array(); //creo gli array per ogni aula;
         foreach (self::$array_aule as $key => $value) {
             $arrayPerLista[$value] = array();
         }
@@ -348,7 +353,7 @@ class UnipdCalendar {
      * alternativa alla tabella per gli screenreader e come layout di stampa.
      *
      */
-    public function printListedContents($prenotazioni){
+    public function printListedContents($prenotazioni) {
         //ordinare l'array secondo le aule, e per ogni aula ordinare secondo l'orario
         /* impostare lista: GIORNO
                             AULA
@@ -378,11 +383,7 @@ class UnipdCalendar {
             }
         }
         echo "</ul>";
-
-
         //var_dump($arrayPerLista);
-       
-        
     }
 
     public function printHead(){
@@ -410,10 +411,8 @@ class UnipdCalendar {
     }
 
 
-    
     public function render() {
        ?>
- 
                 <div id="skip-link"><p><a class="visuallyhidden" tabindex="2" href="#maincontent">Vai al contenuto</a></p></div>
                 <!-- <div id="page-wrapper"><div id="page">-->
                     <header id="header">
@@ -440,7 +439,7 @@ class UnipdCalendar {
                 <nav id="mainmenu" role="navigation">
 
                     <ul class="clearfix">
-                        <li class="fl" id="menuHomePage">
+                        <li class="fl selected" id="menuHomePage">
                             <a class="fl" tabindex="2" href="">Home</a>
                         </li>
                         <li class="fl" id="menuTutte" >
@@ -517,20 +516,19 @@ class UnipdCalendar {
                     ?>
                 </section>
         <?php
-    }
-    
+    }   
 
-        public function printFooter(){
-        ?><footer>
-                    <p class="disclaimer"> I dati sono prelevati, al momento del caricamento della pagina,
-                    in modo automatico dai siti di prenotazione dell'ateneo; potrebbero, quindi, essere affetti da errore.</p>
-                    <p class="autori" >
-                        A cura di: <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                            <span itemprop="name">Chiara Bigarella</span></span>
-                        e <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                            <span itemprop="name">Fabio Ros</span></span>
-                    </p>
-                </footer><?php
+    public function printFooter(){
+    ?><footer>
+    	<p class="disclaimer"> I dati sono prelevati, al momento del caricamento della pagina,
+        in modo automatico dai siti di prenotazione dell'ateneo; potrebbero, quindi, essere affetti da errore.</p>
+        <p class="autori" >
+        	A cura di: <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                      <span itemprop="name">Chiara Bigarella</span></span>
+                    e <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+         	          <span itemprop="name">Fabio Ros</span></span>
+        </p>
+    </footer><?php
     }
 
 }
