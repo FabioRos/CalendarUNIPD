@@ -314,13 +314,12 @@ class UnipdCalendar {
                 for ($j = 0; $j < $numAule; $j++)
                     echo "<td> </td>";
                 $this->arrayAuleLibere[$i]="tutto libero";
-                echo $i;
             }
             echo "</tr>";
         }        
         echo "</tbody>";
         echo "</table>";
-        var_dump($this->arrayAuleLibere);
+        //var_dump($this->arrayAuleLibere);
     }
     
     /**
@@ -456,7 +455,7 @@ class UnipdCalendar {
                         </li>
 
                         <li id="menuWifi" class="fl">
-                            <a class="fl" id="torre_ref" tabindex="7" href="">Torre di Archimede</a>
+                            <a class="fl" id="torre_ref" tabindex="7" href="">Torre Archimede</a>
                         </li>
 
                     </ul>
