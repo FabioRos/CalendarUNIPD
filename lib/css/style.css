@@ -134,11 +134,17 @@ li.fl a{
 }
 
 li.fl :hover {
-background: #9B0014;
-color: #fff !important;     
+	background: #9B0014;
+	color: #fff !important;     
 }
 
+li.selected{
+	background: #9B0014;
+}
 
+li.selected a{
+	color: #fff !important;     
+}
 section#tblWrapper{
     margin:20px auto;
     max-width:95%;
